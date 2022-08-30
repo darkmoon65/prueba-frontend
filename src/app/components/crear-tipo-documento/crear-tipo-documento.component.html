@@ -1,0 +1,27 @@
+
+<div class="col-md-6 offset-md-3">
+    <br>
+    <h3>Crear tipos de documento</h3>
+    <form (ngSubmit)="sendQuery()" #tipoDocumentoForm = "ngForm">
+        <div class="form-group">
+            <label >Codigo</label>
+            <input type="text" class="form-control" id="codigo" [(ngModel)] = "tipoDocumento.codigo" name="codigo" required>   
+        </div>
+        <div class="form-group">
+            <label >Nombre</label>
+            <input type="text" class="form-control" id="nombre" [(ngModel)] = "tipoDocumento.nombre" name="nombre" required>   
+        </div>
+        <div class="form-group">
+            <label >Descripcion</label>
+            <input type="text" class="form-control" id="descripcion" [(ngModel)] = "tipoDocumento.descripcion" name="descripcion">   
+        </div>
+        <div class="form-group">
+            <label >Estado</label>
+            <select class="form-control" [(ngModel)] = "tipoDocumento.estado" name="estado" required>
+                <option [ngValue]="true">Activar</option>
+                <option [ngValue]="false">Desactivar</option>
+            </select> 
+        </div>
+        <button class="btn btn-success" [disabled]= "!tipoDocumentoForm.form.valid">guardar</button>
+    </form>
+</div>

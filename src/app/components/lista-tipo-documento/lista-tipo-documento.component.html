@@ -1,0 +1,28 @@
+<div class="col-md-6 offset-md-3"><h4>Lista tipo de documentos</h4></div>
+<button class="btn btn-info" routerLink="/home/crearTipoDocumento">Crear tipo documento</button>
+<br/>
+<table class="table table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>Id</th>
+            <th>Codigo</th>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+            <th>Estado</th>
+            <th>Opciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let tipo of listaTipoDocumento" >
+            <th>{{tipo.id}} </th>
+            <th>{{tipo.codigo}} </th>
+            <th>{{tipo.nombre}} </th>
+            <th>{{tipo.descripcion}} </th>
+            <th>{{tipo.estado}} </th>
+            <td>
+                <button (click)="actualizarTipoDocumento(tipo.id)" class="btn btn-success">Editar </button>
+                <button (click)="eliminarTipoDocumento(tipo.id)" class="btn btn-danger">Eliminar </button>
+            </td>
+        </tr>
+    </tbody>
+</table>

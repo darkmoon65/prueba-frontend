@@ -1,0 +1,50 @@
+<div class="col-md-6 offset-md-3">
+    <br>
+    <h3>Crear Entidad</h3>
+    <form (ngSubmit)="sendQuery()" #entidadForm = "ngForm">
+        <div class="form-group">
+            <label >Tipo Documento</label>
+            <select class="form-control" [(ngModel)] = "entidad.idDocumento" name="tipoDocumento" required>
+                <option *ngFor="let item of tipoDocumentos" [ngValue]="item" >
+                    {{item.nombre}}
+                </option>
+            </select> 
+        </div>
+        <div class="form-group">
+            <label >Numero Documento</label>
+            <input type="text" class="form-control" id="nombre" [(ngModel)] = "entidad.nroDocumento" name="numeroDocumento" required>   
+        </div>
+        <div class="form-group">
+            <label >Razon social</label>
+            <input type="text" class="form-control" id="descripcion" [(ngModel)] = "entidad.razonSocial" name="razonSocial" required>   
+        </div>
+        <div class="form-group">
+            <label >Nombre comercial</label>
+            <input type="text" class="form-control" id="nombreComercial" [(ngModel)] = "entidad.nombreComercial" name="nombreComercial">   
+        </div>
+        <div class="form-group">
+            <label >Tipo contribuyente</label>
+            <select class="form-control" [(ngModel)] = "entidad.idContribuyente" name="tipoContribuyente">
+                <option *ngFor="let item of tipoContribuyentes" [ngValue]="item" >
+                    {{item.nombre}}
+                </option>
+            </select> 
+        </div>
+        <div class="form-group">
+            <label >Direccion</label>
+            <input type="text" class="form-control" id="direccion" [(ngModel)] = "entidad.direccion" name="direccion">   
+        </div>
+        <div class="form-group">
+            <label >Telefono</label>
+            <input type="text" class="form-control" id="telefono" [(ngModel)] = "entidad.telefono" name="telefono">   
+        </div>
+        <div class="form-group">
+            <label >Estado</label>
+            <select class="form-control" [(ngModel)] = "entidad.estado" name="estado" required>
+                <option [ngValue]="true">Activar</option>
+                <option [ngValue]="false">Desactivar</option>
+            </select> 
+        </div>
+        <button class="btn btn-success" [disabled]= "!entidadForm.form.valid">guardar</button>
+    </form>
+</div>

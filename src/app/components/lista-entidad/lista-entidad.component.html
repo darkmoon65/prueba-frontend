@@ -1,0 +1,35 @@
+<div class="col-md-6 offset-md-3"><h4>Lista Entidades</h4></div>
+<button class="btn btn-info" routerLink="/home/crearEntidad">Crear Entidad</button>
+<table class="table table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>IdEntidad</th>
+            <th>IdTipoDocumento</th>
+            <th>NroDocumento</th>
+            <th>razonSocial</th>
+            <th>nombreComercial</th>
+            <th>IdTipoContribuyente</th>
+            <th>direccion</th>
+            <th>telefono</th>
+            <th>Estado</th>
+            <th>opciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let entidad of listaEntidad" >
+            <th>{{entidad.id}} </th>
+            <th>{{entidad.idDocumento.id}} </th>
+            <th>{{entidad.nroDocumento}} </th>
+            <th>{{entidad.razonSocial}} </th>
+            <th>{{entidad.nombreComercial}} </th>
+            <th>{{entidad.idContribuyente.id}} </th>
+            <th>{{entidad.direccion}} </th>
+            <th>{{entidad.telefono}} </th>
+            <th>{{entidad.estado}} </th>
+            <td>
+                <button (click)="actualizarEntidad(entidad.id)" class="btn btn-success">Editar </button>
+                <button (click)="eliminarEntidad(entidad.id)" class="btn btn-danger">Eliminar </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
